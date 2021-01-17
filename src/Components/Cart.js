@@ -6,6 +6,7 @@ import CardResult from './CardResult'
 class Cart extends Component {
     state = {  }
     render() { 
+        var {children} = this.props;
         return ( 
         <section className="section">
             <div className="table-responsive">
@@ -21,7 +22,7 @@ class Cart extends Component {
                     </tr>
                     </thead>
                     <tbody>
-                       <CartItem/>
+                        { children }
             
                         <CardResult />
 
