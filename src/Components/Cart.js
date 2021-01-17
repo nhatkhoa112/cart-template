@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import CartItem from './CartItem'
-import CardResult from './CardResult'
 
 
 class Cart extends Component {
@@ -24,7 +22,6 @@ class Cart extends Component {
                     <tbody>
                         { children }
             
-                        <CardResult />
 
                     
                     </tbody>

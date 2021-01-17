@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Cart from './../Components/Cart';
-import CartResult from './../Components/CartResult';
-
+import CartResult from './../Components/CardResult';
 import CartItem from './../Components/CartItem';
 
 import * as Message from './../Constants/message'
