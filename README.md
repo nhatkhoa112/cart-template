@@ -12,8 +12,8 @@ The following **required** functionality is completed:
 
 The following optional features are implemented:
 
- Buy many of one product one click
- Update inventory 
+- [ ] Buy many of one product one click
+- [ ] Update inventory 
  
 
 ## Video Walkthrough
