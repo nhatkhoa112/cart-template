@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import Products from './../Components/Products'
 import Product from './../Components/Product'
 import PropTypes from 'prop-types';
-import { actAddToCart } from './../Actions/index';
+import { actAddToCart, actChangeMessage } from './../Actions/index';
 
 
 
@@ -12,6 +12,7 @@ class ProductsContainer extends Component {
     state = {  }
     render() { 
         var { products } = this.props;
+       
         return ( 
             <Products>
                 {this.showProducts(products)}
@@ -20,12 +21,13 @@ class ProductsContainer extends Component {
     }
     showProducts(products){
         var result = null;
-        var {onAddToCart}= this.props;
+        var {onAddToCart, onChangeMessage}= this.props;
         if(products.length > 0){
             result = products.map((product, index) =>{
                 return <Product key={index}
                                 product = {product} 
                                 onAddToCart={onAddToCart}
+                                onChangeMessage= {  onChangeMessage }
                                     />
             });
         }
@@ -45,7 +47,9 @@ ProductsContainer.propTypes={
             inventory: PropTypes.number.isRequired,
             rating: PropTypes.number.isRequired
         })
-    ).isRequired
+    ).isRequired,
+    onChangeMessage: PropTypes.func.isRequired,
+    onAddToCart: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => {
@@ -60,6 +64,9 @@ const mapDispatchToProps = (dispatch , props) => {
         onAddToCart: (product) => {
             dispatch(actAddToCart(product,1))
 
+        },
+        onChangeMessage : (message) => {
+            dispatch(actChangeMessage(message))
         }
     }
 }
